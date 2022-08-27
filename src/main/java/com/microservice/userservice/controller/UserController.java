@@ -1,5 +1,6 @@
 package com.microservice.userservice.controller;
 
+import com.microservice.userservice.dto.ResponseDTO;
 import com.microservice.userservice.entity.UserEntity;
 import com.microservice.userservice.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -21,10 +22,19 @@ public class UserController {
 
     }
 
+/*
     @GetMapping("/{id}")
     public UserEntity getUser(@PathVariable Long id){
         log.info("inside user service get data");
         return  userService.getUser(id);
+
+    }
+
+*/
+    @GetMapping("/{id}")
+    public ResponseDTO getUserWithDept(@PathVariable Long id){
+     return userService.getUserWithDept(id);
+
 
     }
 }
